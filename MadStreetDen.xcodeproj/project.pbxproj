@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EFA70B51B5994BA00C91615 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA70B41B5994BA00C91615 /* main.m */; };
+		2EFA70B81B5994BA00C91615 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA70B71B5994BA00C91615 /* AppDelegate.m */; };
+		2EFA70BB1B5994BA00C91615 /* MadStreetDen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA70B91B5994BA00C91615 /* MadStreetDen.xcdatamodeld */; };
+		2EFA70BE1B5994BA00C91615 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA70BD1B5994BA00C91615 /* ViewController.m */; };
+		2EFA70C11B5994BA00C91615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70BF1B5994BA00C91615 /* Main.storyboard */; };
+		2EFA70C31B5994BA00C91615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70C21B5994BA00C91615 /* Images.xcassets */; };
+		2EFA70C61B5994BA00C91615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70C41B5994BA00C91615 /* LaunchScreen.xib */; };
+		2EFA70D21B5994BB00C91615 /* MadStreetDenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA70D11B5994BB00C91615 /* MadStreetDenTests.m */; };
+		2EFA70DD1B5995BF00C91615 /* ProductListGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA70DC1B5995BF00C91615 /* ProductListGridViewController.m */; };
+		2EFA70E01B59976D00C91615 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA70DF1B59976D00C91615 /* BaseViewController.m */; };
+		2EFA70E31B59A0E700C91615 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA70E21B59A0E700C91615 /* Request.m */; };
+		2EFA70FF1B59FD5C00C91615 /* casual-clothes-for-women-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70FB1B59FD5C00C91615 /* casual-clothes-for-women-3.jpg */; };
+		2EFA71001B59FD5C00C91615 /* casual-wear-for-men-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70FC1B59FD5C00C91615 /* casual-wear-for-men-2.jpg */; };
+		2EFA71011B59FD5C00C91615 /* casual-dresses-mens-143.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70FD1B59FD5C00C91615 /* casual-dresses-mens-143.jpg */; };
+		2EFA71021B59FD5C00C91615 /* best-casual-wear-for-men.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70FE1B59FD5C00C91615 /* best-casual-wear-for-men.jpg */; };
+		2EFA71081B5A0DEB00C91615 /* Tricoloring.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA71071B5A0DEB00C91615 /* Tricoloring.png */; };
+		3F283A391B61371600282684 /* TypeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F283A381B61371600282684 /* TypeFilterViewController.m */; };
+		3F283A461B61375800282684 /* 1437593575_icon-ios7-camera-outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A3A1B61375800282684 /* 1437593575_icon-ios7-camera-outline.png */; };
+		3F283A471B61375800282684 /* 1437593456_Assistant.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A3B1B61375800282684 /* 1437593456_Assistant.png */; };
+		3F283A481B61375800282684 /* 1437593372_alifashion012-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A3C1B61375800282684 /* 1437593372_alifashion012-512.png */; };
+		3F283A491B61375800282684 /* 1437593237_Trousers.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A3D1B61375800282684 /* 1437593237_Trousers.png */; };
+		3F283A4A1B61375800282684 /* 1437593199_alifashion014-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A3E1B61375800282684 /* 1437593199_alifashion014-512.png */; };
+		3F283A4B1B61375800282684 /* 1437593084_clothing_accesories_clothes_fabric-09.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A3F1B61375800282684 /* 1437593084_clothing_accesories_clothes_fabric-09.png */; };
+		3F283A4C1B61375800282684 /* 1437593061_clothing_accesories_clothes_fabric-18.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A401B61375800282684 /* 1437593061_clothing_accesories_clothes_fabric-18.png */; };
+		3F283A4D1B61375800282684 /* 1437592965_T-shirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A411B61375800282684 /* 1437592965_T-shirt.png */; };
+		3F283A4E1B61375800282684 /* 1437592879_user_female.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A421B61375800282684 /* 1437592879_user_female.png */; };
+		3F283A4F1B61375800282684 /* 1437592866_user_female3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A431B61375800282684 /* 1437592866_user_female3.png */; };
+		3F283A501B61375800282684 /* 1437592846_user_male3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A441B61375800282684 /* 1437592846_user_male3.png */; };
+		3F283A511B61375800282684 /* 1437592838_user_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A451B61375800282684 /* 1437592838_user_male.png */; };
+		3F2CFCB81B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2CFCB61B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.m */; };
+		3F2CFCB91B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CFCB71B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.xib */; };
+		3F2CFCBC1B5E398D0045B9A7 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2CFCBB1B5E398D0045B9A7 /* ProductDetailViewController.m */; };
+		3F42BDE51B613A30000B0191 /* 1437681890_45_Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F42BDE41B613A30000B0191 /* 1437681890_45_Menu.png */; };
+		3F9991381B60FBCA000834C6 /* CameraICon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9991371B60FBCA000834C6 /* CameraICon.png */; };
+		3FCE470A1B6112F300783F68 /* FavouriteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCE47081B6112F300783F68 /* FavouriteIcon.png */; };
+		3FCE470B1B6112F300783F68 /* WhatsAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCE47091B6112F300783F68 /* WhatsAppIcon.png */; };
+		3FCE470D1B61147300783F68 /* Favourites.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCE470C1B61147300783F68 /* Favourites.png */; };
+		3FCE470F1B611C8300783F68 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCE470E1B611C8300783F68 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EFA70CC1B5994BB00C91615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EFA70A71B5994B900C91615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EFA70AE1B5994BA00C91615;
+			remoteInfo = MadStreetDen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2EFA70AF1B5994BA00C91615 /* MadStreetDen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadStreetDen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EFA70B31B5994BA00C91615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EFA70B41B5994BA00C91615 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2EFA70B61B5994BA00C91615 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2EFA70B71B5994BA00C91615 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2EFA70BA1B5994BA00C91615 /* MadStreetDen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MadStreetDen.xcdatamodel; sourceTree = "<group>"; };
+		2EFA70BC1B5994BA00C91615 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2EFA70BD1B5994BA00C91615 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2EFA70C01B5994BA00C91615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2EFA70C21B5994BA00C91615 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2EFA70C51B5994BA00C91615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2EFA70CB1B5994BB00C91615 /* MadStreetDenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadStreetDenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EFA70D01B5994BB00C91615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EFA70D11B5994BB00C91615 /* MadStreetDenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MadStreetDenTests.m; sourceTree = "<group>"; };
+		2EFA70DB1B5995BF00C91615 /* ProductListGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductListGridViewController.h; path = ViewControllers/ProductListGridViewController.h; sourceTree = "<group>"; };
+		2EFA70DC1B5995BF00C91615 /* ProductListGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductListGridViewController.m; path = ViewControllers/ProductListGridViewController.m; sourceTree = "<group>"; };
+		2EFA70DE1B59976D00C91615 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = ViewControllers/BaseViewController.h; sourceTree = "<group>"; };
+		2EFA70DF1B59976D00C91615 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = ViewControllers/BaseViewController.m; sourceTree = "<group>"; };
+		2EFA70E11B59A0E700C91615 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Request.h; path = Request/Request.h; sourceTree = "<group>"; };
+		2EFA70E21B59A0E700C91615 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Request.m; path = Request/Request.m; sourceTree = "<group>"; };
+		2EFA70FB1B59FD5C00C91615 /* casual-clothes-for-women-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "casual-clothes-for-women-3.jpg"; path = "Image Assets/casual-clothes-for-women-3.jpg"; sourceTree = "<group>"; };
+		2EFA70FC1B59FD5C00C91615 /* casual-wear-for-men-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "casual-wear-for-men-2.jpg"; path = "Image Assets/casual-wear-for-men-2.jpg"; sourceTree = "<group>"; };
+		2EFA70FD1B59FD5C00C91615 /* casual-dresses-mens-143.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "casual-dresses-mens-143.jpg"; path = "Image Assets/casual-dresses-mens-143.jpg"; sourceTree = "<group>"; };
+		2EFA70FE1B59FD5C00C91615 /* best-casual-wear-for-men.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "best-casual-wear-for-men.jpg"; path = "Image Assets/best-casual-wear-for-men.jpg"; sourceTree = "<group>"; };
+		2EFA71071B5A0DEB00C91615 /* Tricoloring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tricoloring.png; sourceTree = "<group>"; };
+		3F283A371B61371600282684 /* TypeFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeFilterViewController.h; sourceTree = "<group>"; };
+		3F283A381B61371600282684 /* TypeFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeFilterViewController.m; sourceTree = "<group>"; };
+		3F283A3A1B61375800282684 /* 1437593575_icon-ios7-camera-outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1437593575_icon-ios7-camera-outline.png"; sourceTree = "<group>"; };
+		3F283A3B1B61375800282684 /* 1437593456_Assistant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1437593456_Assistant.png; sourceTree = "<group>"; };
+		3F283A3C1B61375800282684 /* 1437593372_alifashion012-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1437593372_alifashion012-512.png"; sourceTree = "<group>"; };
+		3F283A3D1B61375800282684 /* 1437593237_Trousers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1437593237_Trousers.png; sourceTree = "<group>"; };
+		3F283A3E1B61375800282684 /* 1437593199_alifashion014-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1437593199_alifashion014-512.png"; sourceTree = "<group>"; };
+		3F283A3F1B61375800282684 /* 1437593084_clothing_accesories_clothes_fabric-09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1437593084_clothing_accesories_clothes_fabric-09.png"; sourceTree = "<group>"; };
+		3F283A401B61375800282684 /* 1437593061_clothing_accesories_clothes_fabric-18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1437593061_clothing_accesories_clothes_fabric-18.png"; sourceTree = "<group>"; };
+		3F283A411B61375800282684 /* 1437592965_T-shirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1437592965_T-shirt.png"; sourceTree = "<group>"; };
+		3F283A421B61375800282684 /* 1437592879_user_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1437592879_user_female.png; sourceTree = "<group>"; };
+		3F283A431B61375800282684 /* 1437592866_user_female3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1437592866_user_female3.png; sourceTree = "<group>"; };
+		3F283A441B61375800282684 /* 1437592846_user_male3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1437592846_user_male3.png; sourceTree = "<group>"; };
+		3F283A451B61375800282684 /* 1437592838_user_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1437592838_user_male.png; sourceTree = "<group>"; };
+		3F2CFCB51B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductGridCollectionViewCell.h; path = CustomCell/ProductGridCollectionViewCell.h; sourceTree = "<group>"; };
+		3F2CFCB61B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductGridCollectionViewCell.m; path = CustomCell/ProductGridCollectionViewCell.m; sourceTree = "<group>"; };
+		3F2CFCB71B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductGridCollectionViewCell.xib; path = CustomCell/ProductGridCollectionViewCell.xib; sourceTree = "<group>"; };
+		3F2CFCBA1B5E398D0045B9A7 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailViewController.h; path = ViewControllers/ProductDetailViewController.h; sourceTree = "<group>"; };
+		3F2CFCBB1B5E398D0045B9A7 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailViewController.m; path = ViewControllers/ProductDetailViewController.m; sourceTree = "<group>"; };
+		3F42BDE41B613A30000B0191 /* 1437681890_45_Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1437681890_45_Menu.png; sourceTree = "<group>"; };
+		3F9991371B60FBCA000834C6 /* CameraICon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraICon.png; sourceTree = "<group>"; };
+		3FCE47081B6112F300783F68 /* FavouriteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FavouriteIcon.png; sourceTree = "<group>"; };
+		3FCE47091B6112F300783F68 /* WhatsAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhatsAppIcon.png; sourceTree = "<group>"; };
+		3FCE470C1B61147300783F68 /* Favourites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Favourites.png; sourceTree = "<group>"; };
+		3FCE470E1B611C8300783F68 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EFA70AC1B5994BA00C91615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FCE470F1B611C8300783F68 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EFA70C81B5994BB00C91615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2EFA70A61B5994B900C91615 = {
+			isa = PBXGroup;
+			children = (
+				3FCE470E1B611C8300783F68 /* QuartzCore.framework */,
+				2EFA70B11B5994BA00C91615 /* MadStreetDen */,
+				2EFA70CE1B5994BB00C91615 /* MadStreetDenTests */,
+				2EFA70B01B5994BA00C91615 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2EFA70B01B5994BA00C91615 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA70AF1B5994BA00C91615 /* MadStreetDen.app */,
+				2EFA70CB1B5994BB00C91615 /* MadStreetDenTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EFA70B11B5994BA00C91615 /* MadStreetDen */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA71071B5A0DEB00C91615 /* Tricoloring.png */,
+				2EFA70B61B5994BA00C91615 /* AppDelegate.h */,
+				2EFA70B71B5994BA00C91615 /* AppDelegate.m */,
+				2EFA71061B59FDAA00C91615 /* CustomCell */,
+				2EFA70F21B59FB5800C91615 /* Image Assets */,
+				2EFA70E41B59A13200C91615 /* ViewControllers */,
+				2EFA70E51B59A13E00C91615 /* Request */,
+				2EFA70BF1B5994BA00C91615 /* Main.storyboard */,
+				2EFA70C21B5994BA00C91615 /* Images.xcassets */,
+				2EFA70C41B5994BA00C91615 /* LaunchScreen.xib */,
+				2EFA70B91B5994BA00C91615 /* MadStreetDen.xcdatamodeld */,
+				2EFA70B21B5994BA00C91615 /* Supporting Files */,
+			);
+			path = MadStreetDen;
+			sourceTree = "<group>";
+		};
+		2EFA70B21B5994BA00C91615 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA70B31B5994BA00C91615 /* Info.plist */,
+				2EFA70B41B5994BA00C91615 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2EFA70CE1B5994BB00C91615 /* MadStreetDenTests */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA70D11B5994BB00C91615 /* MadStreetDenTests.m */,
+				2EFA70CF1B5994BB00C91615 /* Supporting Files */,
+			);
+			path = MadStreetDenTests;
+			sourceTree = "<group>";
+		};
+		2EFA70CF1B5994BB00C91615 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA70D01B5994BB00C91615 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2EFA70E41B59A13200C91615 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA70BC1B5994BA00C91615 /* ViewController.h */,
+				2EFA70BD1B5994BA00C91615 /* ViewController.m */,
+				2EFA70DE1B59976D00C91615 /* BaseViewController.h */,
+				2EFA70DF1B59976D00C91615 /* BaseViewController.m */,
+				2EFA70DB1B5995BF00C91615 /* ProductListGridViewController.h */,
+				2EFA70DC1B5995BF00C91615 /* ProductListGridViewController.m */,
+				3F2CFCBA1B5E398D0045B9A7 /* ProductDetailViewController.h */,
+				3F2CFCBB1B5E398D0045B9A7 /* ProductDetailViewController.m */,
+				3F283A371B61371600282684 /* TypeFilterViewController.h */,
+				3F283A381B61371600282684 /* TypeFilterViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2EFA70E51B59A13E00C91615 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA70E11B59A0E700C91615 /* Request.h */,
+				2EFA70E21B59A0E700C91615 /* Request.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		2EFA70F21B59FB5800C91615 /* Image Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3F42BDE41B613A30000B0191 /* 1437681890_45_Menu.png */,
+				3F283A3A1B61375800282684 /* 1437593575_icon-ios7-camera-outline.png */,
+				3F283A3B1B61375800282684 /* 1437593456_Assistant.png */,
+				3F283A3C1B61375800282684 /* 1437593372_alifashion012-512.png */,
+				3F283A3D1B61375800282684 /* 1437593237_Trousers.png */,
+				3F283A3E1B61375800282684 /* 1437593199_alifashion014-512.png */,
+				3F283A3F1B61375800282684 /* 1437593084_clothing_accesories_clothes_fabric-09.png */,
+				3F283A401B61375800282684 /* 1437593061_clothing_accesories_clothes_fabric-18.png */,
+				3F283A411B61375800282684 /* 1437592965_T-shirt.png */,
+				3F283A421B61375800282684 /* 1437592879_user_female.png */,
+				3F283A431B61375800282684 /* 1437592866_user_female3.png */,
+				3F283A441B61375800282684 /* 1437592846_user_male3.png */,
+				3F283A451B61375800282684 /* 1437592838_user_male.png */,
+				2EFA70FB1B59FD5C00C91615 /* casual-clothes-for-women-3.jpg */,
+				2EFA70FC1B59FD5C00C91615 /* casual-wear-for-men-2.jpg */,
+				2EFA70FD1B59FD5C00C91615 /* casual-dresses-mens-143.jpg */,
+				2EFA70FE1B59FD5C00C91615 /* best-casual-wear-for-men.jpg */,
+				3F9991371B60FBCA000834C6 /* CameraICon.png */,
+				3FCE47081B6112F300783F68 /* FavouriteIcon.png */,
+				3FCE47091B6112F300783F68 /* WhatsAppIcon.png */,
+				3FCE470C1B61147300783F68 /* Favourites.png */,
+			);
+			name = "Image Assets";
+			sourceTree = "<group>";
+		};
+		2EFA71061B59FDAA00C91615 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				3F2CFCB51B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.h */,
+				3F2CFCB61B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.m */,
+				3F2CFCB71B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.xib */,
+			);
+			name = CustomCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EFA70AE1B5994BA00C91615 /* MadStreetDen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EFA70D51B5994BB00C91615 /* Build configuration list for PBXNativeTarget "MadStreetDen" */;
+			buildPhases = (
+				2EFA70AB1B5994BA00C91615 /* Sources */,
+				2EFA70AC1B5994BA00C91615 /* Frameworks */,
+				2EFA70AD1B5994BA00C91615 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MadStreetDen;
+			productName = MadStreetDen;
+			productReference = 2EFA70AF1B5994BA00C91615 /* MadStreetDen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2EFA70CA1B5994BB00C91615 /* MadStreetDenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EFA70D81B5994BB00C91615 /* Build configuration list for PBXNativeTarget "MadStreetDenTests" */;
+			buildPhases = (
+				2EFA70C71B5994BB00C91615 /* Sources */,
+				2EFA70C81B5994BB00C91615 /* Frameworks */,
+				2EFA70C91B5994BB00C91615 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EFA70CD1B5994BB00C91615 /* PBXTargetDependency */,
+			);
+			name = MadStreetDenTests;
+			productName = MadStreetDenTests;
+			productReference = 2EFA70CB1B5994BB00C91615 /* MadStreetDenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EFA70A71B5994B900C91615 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Home;
+				TargetAttributes = {
+					2EFA70AE1B5994BA00C91615 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					2EFA70CA1B5994BB00C91615 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 2EFA70AE1B5994BA00C91615;
+					};
+				};
+			};
+			buildConfigurationList = 2EFA70AA1B5994BA00C91615 /* Build configuration list for PBXProject "MadStreetDen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2EFA70A61B5994B900C91615;
+			productRefGroup = 2EFA70B01B5994BA00C91615 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EFA70AE1B5994BA00C91615 /* MadStreetDen */,
+				2EFA70CA1B5994BB00C91615 /* MadStreetDenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EFA70AD1B5994BA00C91615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F283A4A1B61375800282684 /* 1437593199_alifashion014-512.png in Resources */,
+				2EFA70FF1B59FD5C00C91615 /* casual-clothes-for-women-3.jpg in Resources */,
+				2EFA71021B59FD5C00C91615 /* best-casual-wear-for-men.jpg in Resources */,
+				3F2CFCB91B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.xib in Resources */,
+				3FCE470D1B61147300783F68 /* Favourites.png in Resources */,
+				3F283A4F1B61375800282684 /* 1437592866_user_female3.png in Resources */,
+				2EFA70C11B5994BA00C91615 /* Main.storyboard in Resources */,
+				3F283A4C1B61375800282684 /* 1437593061_clothing_accesories_clothes_fabric-18.png in Resources */,
+				3FCE470B1B6112F300783F68 /* WhatsAppIcon.png in Resources */,
+				3F283A471B61375800282684 /* 1437593456_Assistant.png in Resources */,
+				2EFA71011B59FD5C00C91615 /* casual-dresses-mens-143.jpg in Resources */,
+				3F283A481B61375800282684 /* 1437593372_alifashion012-512.png in Resources */,
+				3F283A4D1B61375800282684 /* 1437592965_T-shirt.png in Resources */,
+				3F9991381B60FBCA000834C6 /* CameraICon.png in Resources */,
+				3FCE470A1B6112F300783F68 /* FavouriteIcon.png in Resources */,
+				3F283A491B61375800282684 /* 1437593237_Trousers.png in Resources */,
+				2EFA70C61B5994BA00C91615 /* LaunchScreen.xib in Resources */,
+				2EFA70C31B5994BA00C91615 /* Images.xcassets in Resources */,
+				2EFA71081B5A0DEB00C91615 /* Tricoloring.png in Resources */,
+				3F283A511B61375800282684 /* 1437592838_user_male.png in Resources */,
+				2EFA71001B59FD5C00C91615 /* casual-wear-for-men-2.jpg in Resources */,
+				3F283A501B61375800282684 /* 1437592846_user_male3.png in Resources */,
+				3F283A461B61375800282684 /* 1437593575_icon-ios7-camera-outline.png in Resources */,
+				3F283A4B1B61375800282684 /* 1437593084_clothing_accesories_clothes_fabric-09.png in Resources */,
+				3F42BDE51B613A30000B0191 /* 1437681890_45_Menu.png in Resources */,
+				3F283A4E1B61375800282684 /* 1437592879_user_female.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EFA70C91B5994BB00C91615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EFA70AB1B5994BA00C91615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EFA70B81B5994BA00C91615 /* AppDelegate.m in Sources */,
+				2EFA70E01B59976D00C91615 /* BaseViewController.m in Sources */,
+				2EFA70BB1B5994BA00C91615 /* MadStreetDen.xcdatamodeld in Sources */,
+				3F2CFCBC1B5E398D0045B9A7 /* ProductDetailViewController.m in Sources */,
+				3F283A391B61371600282684 /* TypeFilterViewController.m in Sources */,
+				3F2CFCB81B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.m in Sources */,
+				2EFA70DD1B5995BF00C91615 /* ProductListGridViewController.m in Sources */,
+				2EFA70BE1B5994BA00C91615 /* ViewController.m in Sources */,
+				2EFA70B51B5994BA00C91615 /* main.m in Sources */,
+				2EFA70E31B59A0E700C91615 /* Request.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EFA70C71B5994BB00C91615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EFA70D21B5994BB00C91615 /* MadStreetDenTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EFA70CD1B5994BB00C91615 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EFA70AE1B5994BA00C91615 /* MadStreetDen */;
+			targetProxy = 2EFA70CC1B5994BB00C91615 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2EFA70BF1B5994BA00C91615 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EFA70C01B5994BA00C91615 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2EFA70C41B5994BA00C91615 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EFA70C51B5994BA00C91615 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2EFA70D31B5994BB00C91615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2EFA70D41B5994BB00C91615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EFA70D61B5994BB00C91615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MadStreetDen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2EFA70D71B5994BB00C91615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MadStreetDen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2EFA70D91B5994BB00C91615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MadStreetDenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadStreetDen.app/MadStreetDen";
+			};
+			name = Debug;
+		};
+		2EFA70DA1B5994BB00C91615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MadStreetDenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadStreetDen.app/MadStreetDen";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EFA70AA1B5994BA00C91615 /* Build configuration list for PBXProject "MadStreetDen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EFA70D31B5994BB00C91615 /* Debug */,
+				2EFA70D41B5994BB00C91615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EFA70D51B5994BB00C91615 /* Build configuration list for PBXNativeTarget "MadStreetDen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EFA70D61B5994BB00C91615 /* Debug */,
+				2EFA70D71B5994BB00C91615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EFA70D81B5994BB00C91615 /* Build configuration list for PBXNativeTarget "MadStreetDenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EFA70D91B5994BB00C91615 /* Debug */,
+				2EFA70DA1B5994BB00C91615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2EFA70B91B5994BA00C91615 /* MadStreetDen.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2EFA70BA1B5994BA00C91615 /* MadStreetDen.xcdatamodel */,
+			);
+			currentVersion = 2EFA70BA1B5994BA00C91615 /* MadStreetDen.xcdatamodel */;
+			path = MadStreetDen.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2EFA70A71B5994B900C91615 /* Project object */;
+}
