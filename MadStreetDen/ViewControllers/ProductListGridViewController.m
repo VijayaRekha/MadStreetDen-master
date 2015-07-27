@@ -9,7 +9,6 @@
 #import "ProductListGridViewController.h"
 #import "ProductGridCollectionViewCell.h"
 #import "TypeFilterViewController.h"
-
 @interface ProductListGridViewController ()
 
 @end
@@ -112,23 +111,48 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    CGSize mElementSize = CGSizeMake(150, 255);
-    return mElementSize;
+    CGFloat cellSpacing =(IS_IPHONE_6P) ? 6.0: 5.0; //Define the space between each cell
+    CGFloat leftRightMargin = 15.0; //If defined in Interface Builder for "Section Insets"
+    CGFloat numColumns = 2.0; //The total number of columns you want
+    
+    CGFloat totalCellSpace = cellSpacing * (numColumns - 1);
+    CGFloat screenWidth = [UIScreen mainScreen ].bounds.size.width;
+    CGFloat width = (screenWidth - leftRightMargin - totalCellSpace) / numColumns;
+    CGFloat height = 255.0; //whatever height you want
+    
+    return CGSizeMake(width, height);
+    
+   // return CGSizeMake(([UIScreen mainScreen].bounds.size.width - 10)/2,255); //use height whatever you wants.
 }
-#pragma mark collection view cell paddings
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 2.0;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 2.0;
-}
+//#pragma mark collection view cell paddings
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+//    return 5.0;
+//}
+//
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+//    return 5.0;
+//}
 
 // Layout: Set Edges
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(20,20,20,20);  // top, left, bottom, right
+    
+    UIEdgeInsets edgeInset;
+    if (IS_IPHONE_5) {
+        edgeInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    }else if (IS_IPHONE_6){
+        edgeInset = UIEdgeInsetsMake(0, 10, 0, -15);
+    }else if (IS_IPHONE_6P){
+        edgeInset = UIEdgeInsetsMake(0, 20, 0, -20);
+    }else{
+        edgeInset = UIEdgeInsetsMake(0, 0, 0, 0);
+
+    }
+    return edgeInset;
 }
+
+
+
 
 -(void)requestDidFinishLoadingWithResponse:(NSMutableDictionary *)responseDict
 {

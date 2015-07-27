@@ -1,0 +1,13 @@
+//
+//  MadStreetDen.pch
+//  MadStreetDen
+//
+//  Created by Vijaya Rekha on 7/27/15.
+//  Copyright (c) 2015 Home. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "AppConstants.h"
+#endif

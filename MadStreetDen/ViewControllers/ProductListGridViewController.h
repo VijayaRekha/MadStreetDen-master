@@ -13,7 +13,7 @@
 #import "Request.h"
 
 
-@interface ProductListGridViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegate,RequestDelegate>{
+@interface ProductListGridViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,RequestDelegate>{
     IBOutlet UICollectionView *productCollection;
 }
 @property (nonatomic, retain)    NSArray *dataArray;

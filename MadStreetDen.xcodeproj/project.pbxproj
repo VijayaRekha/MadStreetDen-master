@@ -108,6 +108,8 @@
 		3FCE47091B6112F300783F68 /* WhatsAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhatsAppIcon.png; sourceTree = "<group>"; };
 		3FCE470C1B61147300783F68 /* Favourites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Favourites.png; sourceTree = "<group>"; };
 		3FCE470E1B611C8300783F68 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3FEA8BC51B661F7C004CF80C /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
+		3FEA8BC61B6620C4004CF80C /* MadStreetDen.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadStreetDen.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		2EFA70A61B5994B900C91615 = {
 			isa = PBXGroup;
 			children = (
+				3FEA8BC61B6620C4004CF80C /* MadStreetDen.pch */,
 				3FCE470E1B611C8300783F68 /* QuartzCore.framework */,
 				2EFA70B11B5994BA00C91615 /* MadStreetDen */,
 				2EFA70CE1B5994BB00C91615 /* MadStreetDenTests */,
@@ -151,6 +154,7 @@
 		2EFA70B11B5994BA00C91615 /* MadStreetDen */ = {
 			isa = PBXGroup;
 			children = (
+				3FEA8BC51B661F7C004CF80C /* AppConstants.h */,
 				2EFA71071B5A0DEB00C91615 /* Tricoloring.png */,
 				2EFA70B61B5994BA00C91615 /* AppDelegate.h */,
 				2EFA70B71B5994BA00C91615 /* AppDelegate.m */,
@@ -511,6 +515,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MadStreetDen.pch";
 				INFOPLIST_FILE = MadStreetDen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -522,6 +529,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MadStreetDen.pch";
 				INFOPLIST_FILE = MadStreetDen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
