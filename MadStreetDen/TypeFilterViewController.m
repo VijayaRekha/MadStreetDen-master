@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     self.title = [@"Filter" uppercaseString];
     genderArray = [[NSMutableArray alloc] init];
@@ -48,11 +49,11 @@
     if (!selected == YES) {
         [selectedButton setBackgroundColor:[UIColor lightGrayColor]];
         [genderArray addObject:selectedButton.titleLabel.text];
-
+        
     }else {
         [selectedButton setBackgroundColor:[UIColor clearColor]];
         [genderArray addObject:selectedButton.titleLabel.text];
-
+        
     }
 }
 
@@ -65,17 +66,34 @@
     }if (filterTypeArray.count == 0){
         [filterTypeArray addObject:@"Shirts"];
     }
-        Request *req = [[Request alloc] init];
-        [req.reqParameters setValue:@"crop_2015071905301437283831xjg9d:0" forKey:@"MADsearchID"];
-        [req.reqParameters setValue:@"7212070341" forKey:@"appID"];
-        [req.reqParameters setValue:@"q4s7cgotmj3irpc7i0tc" forKey:@"appSecret"];
-        [req.reqParameters setValue:@"10" forKey:@"numResults"];
-        [req.reqParameters setValue:@"true" forKey:@"details"];
-        [req.reqParameters setValue:genderArray forKey:@"gender"];
-        [req.reqParameters setValue:filterTypeArray forKey:@"MADkeywords"];
-        [req callProductRequest:FILTERPRODUCTREQUEST withDelegate:self];
+    [[Request sharedManager] getFilteredProductsWithMADSearchID:@"crop_2015071905301437283831xjg9d" numberOfResults:NUMBEROFPRODUCTS genderDetails:[self getGenderDetails] MADKeywords:[self getMADkeywordsDetails] requestDelegate:self];
+    
+}
+
+-(NSString *) getGenderDetails {
     
     
+    NSMutableString *genderDetails = [[NSMutableString alloc] init];
+    for (NSString *genderStr in genderArray) {
+        NSString *openBracket = [NSString stringWithFormat:@"['%@'],",genderStr];
+        [genderDetails appendString:openBracket];
+    }
+    genderDetails = [[genderDetails substringToIndex:[genderDetails length]-1] mutableCopy];
+    return genderDetails;
+    
+}
+
+- (NSString *) getMADkeywordsDetails{
+    
+    NSMutableString *keywordDetails = [[NSMutableString alloc] init];
+    for (NSString *keywordStr in filterTypeArray) {
+        NSString *openBracket = [NSString stringWithFormat:@"['%@'],",keywordStr];
+        [keywordDetails appendString:openBracket];
+    }
+    keywordDetails = [[keywordDetails substringToIndex:[keywordDetails length]-1] mutableCopy];
+    [keywordDetails insertString:@"[" atIndex:0];
+    [keywordDetails insertString:@"]" atIndex:[keywordDetails length]-1];
+    return keywordDetails;
 }
 
 
@@ -95,13 +113,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparationgit before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
