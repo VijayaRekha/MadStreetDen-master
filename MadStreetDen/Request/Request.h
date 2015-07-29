@@ -14,19 +14,24 @@
 -(void)requestDidFailWithError:(NSError *)error;
 @end
 
-typedef enum {
-    
-    MOREPRODUCTLISTREQUEST = 0,
-    SEARCHPRODUCTLISTREQUEST,
-    FILTERPRODUCTREQUEST
-    
-} REQUEST_TYPE;
 
-@interface Request : NSObject <NSURLConnectionDelegate,NSURLConnectionDataDelegate>
 
-@property (nonatomic, assign) REQUEST_TYPE requestType;
+@interface Request : NSObject <NSURLConnectionDelegate,NSURLConnectionDataDelegate>{
+    
+    BOOL isProductDetailsRequired;
+    
+}
 @property (nonatomic, retain) NSMutableData *responseData;
-@property (nonatomic, retain) NSMutableDictionary *reqParameters;
 @property (nonatomic, assign) id <RequestDelegate> reqDelegate;
-- (void) callProductRequest:(REQUEST_TYPE)reqType withDelegate:(id<RequestDelegate>)delegate;
+
+
++(Request *) sharedManager;
+@property (nonatomic, retain) NSURL *requestURL;
+@property (nonatomic, retain) NSString *requestParameters;
+-(void) discoverProductsWithNumberOfResults:(NSString *)results requestDelegate:(id<RequestDelegate>)delegate;
+- (void) getMoreProductsWithProductId:(NSString *)productID numberOfResults:(NSString *)results requestDelegate:(id<RequestDelegate>)delegate;
+- (void) getFilteredProductsWithMADSearchID:(NSString *)MADSearchID numberOfResults:(NSString *)results
+                              genderDetails:(NSString *)gender
+                                MADKeywords:(NSString *)keywords
+                            requestDelegate:(id<RequestDelegate>)delegate;
 @end

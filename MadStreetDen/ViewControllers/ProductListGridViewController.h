@@ -13,8 +13,10 @@
 #import "Request.h"
 
 
-@interface ProductListGridViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,RequestDelegate>{
+@interface ProductListGridViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,RequestDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     IBOutlet UICollectionView *productCollection;
+    UIImagePickerController *picker;
+    UIImage *originalImage;
 }
 @property (nonatomic, retain)    NSArray *dataArray;
 

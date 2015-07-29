@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+#import "Request.h"
 
-@interface ProductDetailViewController : UIViewController
+@interface ProductDetailViewController : BaseViewController <RequestDelegate>
 {
     IBOutlet UIImageView *productDetailImageView;
     IBOutlet UIView *transparentView;
@@ -19,7 +21,7 @@
     
 }
 
-@property (nonatomic, retain) NSArray *productsArray;
+@property (nonatomic, retain) NSMutableArray *productsArray;
 @property (nonatomic, retain) NSDictionary *detailProductDict;
 
 @end

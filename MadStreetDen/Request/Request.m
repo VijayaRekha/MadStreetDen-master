@@ -8,89 +8,89 @@
 
 #import "Request.h"
 #define BASE_URL @"https://fashion1.madstreetden.com"
+static NSString *productID = @"MO296WA48MAHINDFAS";
+static  NSString *appID = @"7212070341";
+static NSString *appSecretkey = @"q4s7cgotmj3irpc7i0tc";
+static NSString *productDetails = @"true";
+
 
 @implementation Request
 
--(id)init{
++(Request *) sharedManager{
     
-    self = [super init];
-    if (self){
-        self.reqParameters = [[NSMutableDictionary alloc] init];
-    }
-    return self;
+    static Request *sharedInstance=nil;
+    static dispatch_once_t  oncePredecate;
+    
+    dispatch_once(&oncePredecate,^{
+        sharedInstance=[[Request alloc] init];
+    });
+    return sharedInstance;
+}
+
+/** Get Random Products **/
+
+- (void) discoverProductsWithNumberOfResults:(NSString *)results
+                             requestDelegate:(id<RequestDelegate>)delegate{
+    
+    self.requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/discover",BASE_URL]];
+    self.reqDelegate = delegate;
+    self.requestParameters = [NSString stringWithFormat:@"appID=%@&details=%@&numResults=%@&appSecret=%@",appID,productDetails,results,appSecretkey];
+    [self callProductService];
+    
+}
+
+/** Get More Products **/
+
+- (void) getMoreProductsWithProductId:(NSString *)productID
+                      numberOfResults:(NSString *)results
+                      requestDelegate:(id<RequestDelegate>)delegate {
+    
+    self.requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/more",BASE_URL]];
+    self.reqDelegate = delegate;
+    self.requestParameters = [NSString stringWithFormat:@"productID=%@&appID=%@&details=%@&numResults=%@&appSecret=%@",productID,appID,productDetails,results,appSecretkey];
+    [self callProductService];
+    
+}
+
+/** Get Filtered Produts **/
+
+- (void) getFilteredProductsWithMADSearchID:(NSString *)MADSearchID
+                            numberOfResults:(NSString *)results
+                              genderDetails:(NSString *)gender
+                                MADKeywords:(NSString *)keywords
+                            requestDelegate:(id<RequestDelegate>)delegate  {
+    
+    self.requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/filter",BASE_URL]];
+    self.reqDelegate = delegate;
+    self.requestParameters = [NSString stringWithFormat:@"MADsearchID=%@&appID=%@&details=%@&numResults=%@&appSecret=%@&gender=%@&MADkeywords=%@",MADSearchID,appID,productDetails,results,appSecretkey,gender,keywords];
+    [self callProductService];
+    
 }
 
 
-- (void) callProductRequest:(REQUEST_TYPE)reqType withDelegate:(id<RequestDelegate>)delegate {
+-(void) callProductService{
     
-    NSURL *reqUrl = nil;
-    NSString *reqParam = nil;
-    self.reqDelegate = delegate;
-    
-    switch (reqType) {
-            
-        case MOREPRODUCTLISTREQUEST: {
-            reqUrl= [NSURL URLWithString:[NSString stringWithFormat:@"%@/more",BASE_URL]];
-            reqParam=[NSString stringWithFormat:@"productID=MO296WA48MAHINDFAS&appID=7212070341&details=true&numResults=16&appSecret=q4s7cgotmj3irpc7i0tc"];
-        }
-        break;
-        case FILTERPRODUCTREQUEST:{
-
-            reqUrl= [NSURL URLWithString:[NSString stringWithFormat:@"%@/filter",BASE_URL]];
-            //reqParam = [[self getParamStringFromDictionary]copy];
-           reqParam = @"gender=['men']&MADkeywords=[[]]&MADsearchID=crop_2015071905301437283831xjg9d:0&appID=7212070341&details=true&numResults=16&appSecret=q4s7cgotmj3irpc7i0tc";
-        }
-        break;
-        default:
-        break;
-    }
-    NSString *paramLength=[NSString stringWithFormat:@"%lu",(unsigned long)[reqParam length]];
-    NSData *PostData = [reqParam dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:reqUrl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    NSString *paramLength=[NSString stringWithFormat:@"%lu",(unsigned long)[self.requestParameters length]];
+    NSData *PostData = [self.requestParameters dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.requestURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     [request setHTTPMethod:@"POST"];
     [request setValue:paramLength forHTTPHeaderField:@"Content-Lenght"];
     [request setHTTPBody:PostData];
     NSURLConnection *connection =[[NSURLConnection alloc] initWithRequest:request delegate:self];
     [connection start];
-}
-
-- (NSMutableString *) getParamStringFromDictionary {
-    //https://fashion1.madstreetden.com/filter/?gender=["women"]&MADkeywords=[[]]&MADsearchID=crop_201507170325143710350684s06:0&appID=7212070341&details=true&numResults=16&appSecret=q4s7cgotmj3irpc7i0tc
-    NSMutableString *paramStr = [[NSMutableString alloc] init];
     
-    for  (id key in self.reqParameters){
-        
-        if ([[self.reqParameters valueForKey:key] isKindOfClass:[NSMutableArray class]]){
-            [paramStr appendFormat:@"%@=",key];
-            NSArray *arr = [self.reqParameters valueForKey:key];
-            for (NSString *val in arr){
-                [paramStr appendString:[NSString stringWithFormat:@"[\"%@\"],",val]];
-            }
-            paramStr = [[paramStr substringToIndex:[paramStr length]-1] mutableCopy];
-            NSLog(@"paramStr : %@",paramStr);
-            
-        }else{
-            [paramStr appendString:[NSString stringWithFormat:@"&%@=%@&",key,[self.reqParameters valueForKey:key]]];
-            paramStr = [[paramStr substringToIndex:[paramStr length]-1] mutableCopy];
-            NSLog(@"paramStr : %@",paramStr);
-            
-        }
-    }
-  
-    return paramStr;
-
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
     
     self.responseData = [[NSMutableData alloc] init];
-
+    
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     
     [self.responseData appendData:data];
-
+    
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection{
@@ -107,15 +107,15 @@
         
         
     }
-
+    
 }
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     
     NSLog(@"Error Description : %@", error.description);
     [self.reqDelegate requestDidFailWithError:error];
-
-
+    
+    
 }
 
 

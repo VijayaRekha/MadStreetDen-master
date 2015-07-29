@@ -9,6 +9,8 @@
 #import "ProductListGridViewController.h"
 #import "ProductGridCollectionViewCell.h"
 #import "TypeFilterViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+
 @interface ProductListGridViewController ()
 
 @end
@@ -18,10 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"MAD STREET DEN"; 
+    self.title = @"MAD STREET DEN";
     
-    Request *req = [[Request alloc] init];
-    [req callProductRequest:MOREPRODUCTLISTREQUEST withDelegate:self];
+    //  Request *req = [[Request alloc] init];
+    //[req callProductRequest:MOREPRODUCTLISTREQUEST withDelegate:self];
+    
+    [[Request sharedManager]discoverProductsWithNumberOfResults:@"16" requestDelegate:self];
     [self showActivityIndicator];
     
     [productCollection registerNib:[UINib nibWithNibName:@"ProductGridCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"ProductGridCell"];
@@ -33,8 +37,8 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [productCollection setCollectionViewLayout:flowLayout];
     
-   
-
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -44,10 +48,10 @@
     UIButton *customBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [customBtn setImage:[UIImage imageNamed:@"CameraICon"] forState:UIControlStateNormal];
     [customBtn setFrame:CGRectMake(0, 0, 30, 30)];
-    [customBtn addTarget:self action:@selector(loadCamera) forControlEvents:UIControlEventTouchUpInside];
+    [customBtn addTarget:self action:@selector(loadActionSheet) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *cameraBtn = [[UIBarButtonItem alloc] initWithCustomView:customBtn];
     [self.navigationItem setRightBarButtonItem:cameraBtn];
-
+    
 }
 
 -(void) setUpLeftBarButton{
@@ -62,9 +66,11 @@
     
 }
 
+#pragma mark - CollectionView Delegate Methods
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
-
+    
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -75,7 +81,7 @@
     
     ProductGridCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductGridCell" forIndexPath:indexPath];
     
-
+    
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     
@@ -86,6 +92,7 @@
         if (productImage) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
+                
                 cell.productImage.image = productImage;
                 cell.productTitle.text = [[[self.dataArray objectAtIndex:indexPath.row]valueForKey:@"brand"] uppercaseString];
                 cell.productDesc.text = [[self.dataArray objectAtIndex:indexPath.row]valueForKey:@"productName"];
@@ -93,7 +100,7 @@
         }
     });
     return cell;
-
+    
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -102,11 +109,9 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ProductDetailViewController *productDetailVC = [storyboard instantiateViewControllerWithIdentifier:@"productDetailVC"];
     productDetailVC.detailProductDict = [self.dataArray objectAtIndex:indexPath.row];
-    [productDetailVC setProductsArray:self.dataArray];
     [self.navigationController pushViewController:productDetailVC animated:YES];
     
-
-
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -122,18 +127,9 @@
     
     return CGSizeMake(width, height);
     
-   // return CGSizeMake(([UIScreen mainScreen].bounds.size.width - 10)/2,255); //use height whatever you wants.
+    // return CGSizeMake(([UIScreen mainScreen].bounds.size.width - 10)/2,255); //use height whatever you wants.
 }
-//#pragma mark collection view cell paddings
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-//    return 5.0;
-//}
-//
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-//    return 5.0;
-//}
 
-// Layout: Set Edges
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     
@@ -146,29 +142,127 @@
         edgeInset = UIEdgeInsetsMake(0, 20, 0, -20);
     }else{
         edgeInset = UIEdgeInsetsMake(0, 0, 0, 0);
-
+        
     }
     return edgeInset;
 }
 
 
+#pragma mark - Request Delegate Methods
 
 
 -(void)requestDidFinishLoadingWithResponse:(NSMutableDictionary *)responseDict
 {
-
+    
     if (self.dataArray.count == 0) {
         self.dataArray = [responseDict objectForKey:@"data"];
     }
     NSLog(@"dataArray : %@",self.dataArray);
     [self hideActivityIndicator];
     [productCollection reloadData];
-
-}
-
-- (void)loadCamera {
     
 }
+
+- (void)loadActionSheet {
+    if (NSClassFromString(@"UIAlertController")) {
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"Camera Options"
+                                              message:@"Take Photo / Open Gallery"
+                                              preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *cameraAction =  [UIAlertAction actionWithTitle:NSLocalizedString(@"Take Photo", @"")
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action)
+                                        {
+                                            [self initateCamera];
+                                        }];
+        
+        
+        [alertController addAction:cameraAction];
+        UIAlertAction *galleryAction =  [UIAlertAction actionWithTitle:NSLocalizedString(@"Open Gallery", @"")
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action)
+                                        {
+                                            [self loadGallery];
+                                        }];
+        
+        
+        [alertController addAction:galleryAction];
+        
+        UIAlertAction *cancelAciton =  [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"")
+                                                                style:UIAlertActionStyleDestructive
+                                                              handler:^(UIAlertAction *action)
+                                        {
+                                            NSLog(@"Reset action");
+                                            [self dismissViewControllerAnimated:YES completion:nil];
+                                        }];
+        
+        
+        [alertController addAction:cancelAciton];
+        [self presentViewController:alertController animated:YES completion:nil];
+
+    }
+    else {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Camera Options" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo",@"Open Gallery", nil];
+        [actionSheet showInView:self.view];
+        
+    }
+    
+}
+
+#pragma mark - Actionsheet Delegate Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self initateCamera];
+    }else if(buttonIndex == 1) {
+        [self loadGallery];
+    }else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+
+- (void)initateCamera {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        [self presentViewController:picker animated:YES completion:^{
+            
+        }];
+    }else {
+        NSLog(@"No Camera :-( ");
+        
+    }
+}
+
+- (void)loadGallery {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+        [self presentViewController:picker animated:YES completion:^{
+            
+        }];
+
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary *)editingInfo
+{
+    originalImage = image;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 - (void)showTypeFilter {
     //typeFilterVC
@@ -179,8 +273,8 @@
 }
 
 -(void)requestDidFailWithError:(NSError *)error{
-
-
+    
+    
 }
 
 
@@ -192,13 +286,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

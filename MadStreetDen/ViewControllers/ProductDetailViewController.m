@@ -15,7 +15,11 @@
 @implementation ProductDetailViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    [self getMoreProductsWithProductID:[self.detailProductDict valueForKey:@"productId"]];
+    self.productsArray = [[NSMutableArray alloc] init];
     
     NSURL *imgUrl = [NSURL URLWithString:[self.detailProductDict valueForKey:@"productImage"]];
     productDetailImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imgUrl]];
@@ -23,13 +27,13 @@
     brandDescription.text = [self.detailProductDict valueForKey:@"productName"];
     self.title = brandName.text;
     [self loadScrollView];
-  
     
 }
 
 -(void) loadScrollView{
     
     for (int i = 0; i<[self.productsArray count]; i++) {
+        
         NSURL *imgUrl = [NSURL URLWithString:[[self.productsArray valueForKey:@"productImage"] objectAtIndex:i]];
         UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imgUrl]];
         CGRect rect = CGRectMake(i*105, 10, 90, scrollViw.frame.size.height);
@@ -52,16 +56,41 @@
     
 }
 
+- (void) getMoreProductsWithProductID: (NSString *) productID{
+    
+    [[Request sharedManager] getMoreProductsWithProductId:productID numberOfResults:NUMBEROFPRODUCTS requestDelegate:self];
+    [self showActivityIndicator];
+    
+    
+}
+
 - (void) tapGesture:(UITapGestureRecognizer *)gestureRecognizer
 {
     UIImageView *imgV = (UIImageView *)gestureRecognizer.view;
     brandName.text = [[[self.productsArray valueForKey:@"brand"] objectAtIndex:imgV.tag] uppercaseString];
     self.title = brandName.text;
-
+    
     NSURL *imgUrl = [NSURL URLWithString:[[self.productsArray valueForKey:@"productImage"] objectAtIndex:imgV.tag]];
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imgUrl]];
     productDetailImageView.image = image;
+    
+    [self getMoreProductsWithProductID:[[self.productsArray valueForKey:@"productId"] objectAtIndex:imgV.tag]];
+    
+}
 
+- (void)requestDidFinishLoadingWithResponse:(NSMutableDictionary *)responseDict{
+    
+    [self hideActivityIndicator];
+    if (self.productsArray.count>0) {
+        [self.productsArray removeAllObjects];
+    }
+    self.productsArray = [responseDict objectForKey:@"data"];
+    [self loadScrollView];
+    
+}
+
+-(void)requestDidFailWithError:(NSError *)error{
+    [self hideActivityIndicator];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,13 +99,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
