@@ -34,4 +34,5 @@
                               genderDetails:(NSString *)gender
                                 MADKeywords:(NSString *)keywords
                             requestDelegate:(id<RequestDelegate>)delegate;
+- (void) uploadWithOriginalImage :(UIImage *)originalImage andCroppedImage:(UIImage *)cropedImage requestDelegate:(id<RequestDelegate>)delegate;
 @end
