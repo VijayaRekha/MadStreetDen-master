@@ -10,6 +10,8 @@
 #import "ProductGridCollectionViewCell.h"
 #import "TypeFilterViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface ProductListGridViewController ()
 
@@ -36,8 +38,7 @@
     [flowLayout setItemSize:CGSizeMake(150, 255)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [productCollection setCollectionViewLayout:flowLayout];
-    
-    
+
     
     // Do any additional setup after loading the view.
 }
@@ -88,16 +89,29 @@
     dispatch_async(queue, ^{
         
         NSURL *imgUrl = [NSURL URLWithString:[[self.dataArray objectAtIndex:indexPath.row] valueForKey:@"productImage"]];
-        UIImage* productImage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:imgUrl]];
-        if (productImage) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                
-                cell.productImage.image = productImage;
-                cell.productTitle.text = [[[self.dataArray objectAtIndex:indexPath.row]valueForKey:@"brand"] uppercaseString];
-                cell.productDesc.text = [[self.dataArray objectAtIndex:indexPath.row]valueForKey:@"productName"];
-            });
+        if (!self.activityIndicator) {
+            self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            self.activityIndicator.center = cell.contentView.center;
+            self.activityIndicator.hidesWhenStopped = YES;
+            
+            [cell.productImage sd_setImageWithURL:imgUrl placeholderImage:[UIImage imageNamed:@"placeholder.png"] options:SDWebImageTransformAnimatedImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                [self.activityIndicator removeFromSuperview];
+                self.activityIndicator = nil;
+            }];
+            
+            
+            [cell.productImage addSubview:self.activityIndicator];
+            [self.activityIndicator startAnimating];
         }
+        
+        
+        [cell.productImage sd_setImageWithURL:imgUrl
+                             placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+                                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                    }];
+        cell.productTitle.text = [[[self.dataArray objectAtIndex:indexPath.row]valueForKey:@"brand"] uppercaseString];
+        cell.productDesc.text = [[self.dataArray objectAtIndex:indexPath.row]valueForKey:@"productName"];
+       
     });
     return cell;
     
@@ -254,8 +268,12 @@
         didFinishPickingImage:(UIImage *)image
                   editingInfo:(NSDictionary *)editingInfo
 {
-    originalImage = image;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    self.originalImage = image;
+    [self dismissViewControllerAnimated:YES completion:^{
+        TOCropViewController *cropController = [[TOCropViewController alloc] initWithImage:image];
+        cropController.delegate = self;
+        [self presentViewController:cropController animated:YES completion:nil];
+    }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -275,6 +293,19 @@
 -(void)requestDidFailWithError:(NSError *)error{
     
     
+}
+
+#pragma mark - Cropper Delegate -
+- (void)cropViewController:(TOCropViewController *)cropViewController didCropToImage:(UIImage *)image withRect:(CGRect)cropRect angle:(NSInteger)angle
+{
+    self.cropImage = image;
+  
+    
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+    
+
+    [[Request sharedManager] uploadWithOriginalImage:self.originalImage andCroppedImage:self.cropImage requestDelegate:self];
+
 }
 
 

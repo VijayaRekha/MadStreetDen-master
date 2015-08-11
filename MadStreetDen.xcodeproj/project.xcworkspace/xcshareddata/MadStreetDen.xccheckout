@@ -7,22 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1D6B592A-A1E0-493F-B36D-13095D25D33C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MadStreetDen</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2BFFE0F6ADC2F636DB5CE51C3F61B1E02EC8AC1F</key>
 		<string>https://github.com/VijayaRekha/MadStreetDen-master.git</string>
-		<key>525E4A48DE7386622B1B88CE47E2BBE41DBFF67F</key>
-		<string>github.com:VijayaRekha/MadStreetDen.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MadStreetDen.xcodeproj</string>
+	<string>MadStreetDen.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2BFFE0F6ADC2F636DB5CE51C3F61B1E02EC8AC1F</key>
 		<string>../..</string>
-		<key>525E4A48DE7386622B1B88CE47E2BBE41DBFF67F</key>
-		<string>../../../MadStreetDen</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/VijayaRekha/MadStreetDen-master.git</string>
@@ -32,14 +28,6 @@
 	<string>2BFFE0F6ADC2F636DB5CE51C3F61B1E02EC8AC1F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>525E4A48DE7386622B1B88CE47E2BBE41DBFF67F</string>
-			<key>IDESourceControlWCCName</key>
-			<string>MadStreetDen</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

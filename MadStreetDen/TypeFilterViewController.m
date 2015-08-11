@@ -112,6 +112,10 @@
     
 }
 
+- (void)requestDidFailWithError:(NSError *)error {
+    
+}
+
 /*
  #pragma mark - Navigation
  

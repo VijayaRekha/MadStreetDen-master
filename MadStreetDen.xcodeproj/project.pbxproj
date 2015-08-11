@@ -23,6 +23,10 @@
 		2EFA71011B59FD5C00C91615 /* casual-dresses-mens-143.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70FD1B59FD5C00C91615 /* casual-dresses-mens-143.jpg */; };
 		2EFA71021B59FD5C00C91615 /* best-casual-wear-for-men.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA70FE1B59FD5C00C91615 /* best-casual-wear-for-men.jpg */; };
 		2EFA71081B5A0DEB00C91615 /* Tricoloring.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA71071B5A0DEB00C91615 /* Tricoloring.png */; };
+		3F2699891B7A46FF004950DF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2699881B7A46FF004950DF /* ImageIO.framework */; };
+		3F26998C1B7A47E9004950DF /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F26998A1B7A47E9004950DF /* placeholder.png */; };
+		3F26998D1B7A47E9004950DF /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F26998B1B7A47E9004950DF /* placeholder@2x.png */; };
+		3F26998F1B7A48EF004950DF /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F26998E1B7A48EF004950DF /* SDWebImage.framework */; };
 		3F283A391B61371600282684 /* TypeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F283A381B61371600282684 /* TypeFilterViewController.m */; };
 		3F283A461B61375800282684 /* 1437593575_icon-ios7-camera-outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A3A1B61375800282684 /* 1437593575_icon-ios7-camera-outline.png */; };
 		3F283A471B61375800282684 /* 1437593456_Assistant.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F283A3B1B61375800282684 /* 1437593456_Assistant.png */; };
@@ -40,6 +44,15 @@
 		3F2CFCB91B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CFCB71B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.xib */; };
 		3F2CFCBC1B5E398D0045B9A7 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2CFCBB1B5E398D0045B9A7 /* ProductDetailViewController.m */; };
 		3F42BDE51B613A30000B0191 /* 1437681890_45_Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F42BDE41B613A30000B0191 /* 1437681890_45_Menu.png */; };
+		3F906EAC1B79FD6500C0DE6A /* TOCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EAB1B79FD6500C0DE6A /* TOCropViewController.m */; };
+		3F906EB61B79FE0100C0DE6A /* TOActivityCroppedImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EAF1B79FE0100C0DE6A /* TOActivityCroppedImageProvider.m */; };
+		3F906EB71B79FE0100C0DE6A /* TOCroppedImageAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EB11B79FE0100C0DE6A /* TOCroppedImageAttributes.m */; };
+		3F906EB81B79FE0100C0DE6A /* TOCropViewControllerTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EB31B79FE0100C0DE6A /* TOCropViewControllerTransitioning.m */; };
+		3F906EB91B79FE0100C0DE6A /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EB51B79FE0100C0DE6A /* UIImage+CropRotate.m */; };
+		3F906EC31B79FE5100C0DE6A /* TOCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EBC1B79FE5100C0DE6A /* TOCropOverlayView.m */; };
+		3F906EC41B79FE5100C0DE6A /* TOCropScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EBE1B79FE5100C0DE6A /* TOCropScrollView.m */; };
+		3F906EC51B79FE5100C0DE6A /* TOCropToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EC01B79FE5100C0DE6A /* TOCropToolbar.m */; };
+		3F906EC61B79FE5100C0DE6A /* TOCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F906EC21B79FE5100C0DE6A /* TOCropView.m */; };
 		3F9991381B60FBCA000834C6 /* CameraICon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9991371B60FBCA000834C6 /* CameraICon.png */; };
 		3FC03C301B67758500E81F55 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC03C2F1B67758500E81F55 /* MobileCoreServices.framework */; };
 		3FCE470A1B6112F300783F68 /* FavouriteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCE47081B6112F300783F68 /* FavouriteIcon.png */; };
@@ -84,6 +97,10 @@
 		2EFA70FD1B59FD5C00C91615 /* casual-dresses-mens-143.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "casual-dresses-mens-143.jpg"; path = "Image Assets/casual-dresses-mens-143.jpg"; sourceTree = "<group>"; };
 		2EFA70FE1B59FD5C00C91615 /* best-casual-wear-for-men.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "best-casual-wear-for-men.jpg"; path = "Image Assets/best-casual-wear-for-men.jpg"; sourceTree = "<group>"; };
 		2EFA71071B5A0DEB00C91615 /* Tricoloring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tricoloring.png; sourceTree = "<group>"; };
+		3F2699881B7A46FF004950DF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		3F26998A1B7A47E9004950DF /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		3F26998B1B7A47E9004950DF /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
+		3F26998E1B7A48EF004950DF /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = MadStreetDen/SDWebImage.framework; sourceTree = "<group>"; };
 		3F283A371B61371600282684 /* TypeFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeFilterViewController.h; sourceTree = "<group>"; };
 		3F283A381B61371600282684 /* TypeFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeFilterViewController.m; sourceTree = "<group>"; };
 		3F283A3A1B61375800282684 /* 1437593575_icon-ios7-camera-outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1437593575_icon-ios7-camera-outline.png"; sourceTree = "<group>"; };
@@ -104,6 +121,24 @@
 		3F2CFCBA1B5E398D0045B9A7 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailViewController.h; path = ViewControllers/ProductDetailViewController.h; sourceTree = "<group>"; };
 		3F2CFCBB1B5E398D0045B9A7 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailViewController.m; path = ViewControllers/ProductDetailViewController.m; sourceTree = "<group>"; };
 		3F42BDE41B613A30000B0191 /* 1437681890_45_Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1437681890_45_Menu.png; sourceTree = "<group>"; };
+		3F906EAA1B79FD6500C0DE6A /* TOCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropViewController.h; sourceTree = "<group>"; };
+		3F906EAB1B79FD6500C0DE6A /* TOCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropViewController.m; sourceTree = "<group>"; };
+		3F906EAE1B79FE0100C0DE6A /* TOActivityCroppedImageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActivityCroppedImageProvider.h; sourceTree = "<group>"; };
+		3F906EAF1B79FE0100C0DE6A /* TOActivityCroppedImageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActivityCroppedImageProvider.m; sourceTree = "<group>"; };
+		3F906EB01B79FE0100C0DE6A /* TOCroppedImageAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCroppedImageAttributes.h; sourceTree = "<group>"; };
+		3F906EB11B79FE0100C0DE6A /* TOCroppedImageAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCroppedImageAttributes.m; sourceTree = "<group>"; };
+		3F906EB21B79FE0100C0DE6A /* TOCropViewControllerTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropViewControllerTransitioning.h; sourceTree = "<group>"; };
+		3F906EB31B79FE0100C0DE6A /* TOCropViewControllerTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropViewControllerTransitioning.m; sourceTree = "<group>"; };
+		3F906EB41B79FE0100C0DE6A /* UIImage+CropRotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CropRotate.h"; sourceTree = "<group>"; };
+		3F906EB51B79FE0100C0DE6A /* UIImage+CropRotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CropRotate.m"; sourceTree = "<group>"; };
+		3F906EBB1B79FE5100C0DE6A /* TOCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropOverlayView.h; sourceTree = "<group>"; };
+		3F906EBC1B79FE5100C0DE6A /* TOCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropOverlayView.m; sourceTree = "<group>"; };
+		3F906EBD1B79FE5100C0DE6A /* TOCropScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropScrollView.h; sourceTree = "<group>"; };
+		3F906EBE1B79FE5100C0DE6A /* TOCropScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropScrollView.m; sourceTree = "<group>"; };
+		3F906EBF1B79FE5100C0DE6A /* TOCropToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropToolbar.h; sourceTree = "<group>"; };
+		3F906EC01B79FE5100C0DE6A /* TOCropToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropToolbar.m; sourceTree = "<group>"; };
+		3F906EC11B79FE5100C0DE6A /* TOCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropView.h; sourceTree = "<group>"; };
+		3F906EC21B79FE5100C0DE6A /* TOCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropView.m; sourceTree = "<group>"; };
 		3F9991371B60FBCA000834C6 /* CameraICon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraICon.png; sourceTree = "<group>"; };
 		3FC03C2F1B67758500E81F55 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3FCE47081B6112F300783F68 /* FavouriteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FavouriteIcon.png; sourceTree = "<group>"; };
@@ -119,6 +154,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F26998F1B7A48EF004950DF /* SDWebImage.framework in Frameworks */,
+				3F2699891B7A46FF004950DF /* ImageIO.framework in Frameworks */,
 				3FC03C301B67758500E81F55 /* MobileCoreServices.framework in Frameworks */,
 				3FCE470F1B611C8300783F68 /* QuartzCore.framework in Frameworks */,
 			);
@@ -137,6 +174,8 @@
 		2EFA70A61B5994B900C91615 = {
 			isa = PBXGroup;
 			children = (
+				3F26998E1B7A48EF004950DF /* SDWebImage.framework */,
+				3F2699881B7A46FF004950DF /* ImageIO.framework */,
 				3FC03C2F1B67758500E81F55 /* MobileCoreServices.framework */,
 				3FEA8BC61B6620C4004CF80C /* MadStreetDen.pch */,
 				3FCE470E1B611C8300783F68 /* QuartzCore.framework */,
@@ -158,6 +197,7 @@
 		2EFA70B11B5994BA00C91615 /* MadStreetDen */ = {
 			isa = PBXGroup;
 			children = (
+				3F906EA91B79FD6500C0DE6A /* CustomImageCrop */,
 				3FEA8BC51B661F7C004CF80C /* AppConstants.h */,
 				2EFA71071B5A0DEB00C91615 /* Tricoloring.png */,
 				2EFA70B61B5994BA00C91615 /* AppDelegate.h */,
@@ -230,6 +270,8 @@
 		2EFA70F21B59FB5800C91615 /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3F26998A1B7A47E9004950DF /* placeholder.png */,
+				3F26998B1B7A47E9004950DF /* placeholder@2x.png */,
 				3F42BDE41B613A30000B0191 /* 1437681890_45_Menu.png */,
 				3F283A3A1B61375800282684 /* 1437593575_icon-ios7-camera-outline.png */,
 				3F283A3B1B61375800282684 /* 1437593456_Assistant.png */,
@@ -263,6 +305,47 @@
 				3F2CFCB71B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.xib */,
 			);
 			name = CustomCell;
+			sourceTree = "<group>";
+		};
+		3F906EA91B79FD6500C0DE6A /* CustomImageCrop */ = {
+			isa = PBXGroup;
+			children = (
+				3F906EBA1B79FE5100C0DE6A /* Views */,
+				3F906EAD1B79FE0100C0DE6A /* Models */,
+				3F906EAA1B79FD6500C0DE6A /* TOCropViewController.h */,
+				3F906EAB1B79FD6500C0DE6A /* TOCropViewController.m */,
+			);
+			path = CustomImageCrop;
+			sourceTree = "<group>";
+		};
+		3F906EAD1B79FE0100C0DE6A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F906EAE1B79FE0100C0DE6A /* TOActivityCroppedImageProvider.h */,
+				3F906EAF1B79FE0100C0DE6A /* TOActivityCroppedImageProvider.m */,
+				3F906EB01B79FE0100C0DE6A /* TOCroppedImageAttributes.h */,
+				3F906EB11B79FE0100C0DE6A /* TOCroppedImageAttributes.m */,
+				3F906EB21B79FE0100C0DE6A /* TOCropViewControllerTransitioning.h */,
+				3F906EB31B79FE0100C0DE6A /* TOCropViewControllerTransitioning.m */,
+				3F906EB41B79FE0100C0DE6A /* UIImage+CropRotate.h */,
+				3F906EB51B79FE0100C0DE6A /* UIImage+CropRotate.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F906EBA1B79FE5100C0DE6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F906EBB1B79FE5100C0DE6A /* TOCropOverlayView.h */,
+				3F906EBC1B79FE5100C0DE6A /* TOCropOverlayView.m */,
+				3F906EBD1B79FE5100C0DE6A /* TOCropScrollView.h */,
+				3F906EBE1B79FE5100C0DE6A /* TOCropScrollView.m */,
+				3F906EBF1B79FE5100C0DE6A /* TOCropToolbar.h */,
+				3F906EC01B79FE5100C0DE6A /* TOCropToolbar.m */,
+				3F906EC11B79FE5100C0DE6A /* TOCropView.h */,
+				3F906EC21B79FE5100C0DE6A /* TOCropView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +450,8 @@
 				3F283A511B61375800282684 /* 1437592838_user_male.png in Resources */,
 				2EFA71001B59FD5C00C91615 /* casual-wear-for-men-2.jpg in Resources */,
 				3F283A501B61375800282684 /* 1437592846_user_male3.png in Resources */,
+				3F26998D1B7A47E9004950DF /* placeholder@2x.png in Resources */,
+				3F26998C1B7A47E9004950DF /* placeholder.png in Resources */,
 				3F283A461B61375800282684 /* 1437593575_icon-ios7-camera-outline.png in Resources */,
 				3F283A4B1B61375800282684 /* 1437593084_clothing_accesories_clothes_fabric-09.png in Resources */,
 				3F42BDE51B613A30000B0191 /* 1437681890_45_Menu.png in Resources */,
@@ -388,12 +473,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F906EC41B79FE5100C0DE6A /* TOCropScrollView.m in Sources */,
+				3F906EB91B79FE0100C0DE6A /* UIImage+CropRotate.m in Sources */,
+				3F906EC51B79FE5100C0DE6A /* TOCropToolbar.m in Sources */,
+				3F906EB61B79FE0100C0DE6A /* TOActivityCroppedImageProvider.m in Sources */,
+				3F906EC31B79FE5100C0DE6A /* TOCropOverlayView.m in Sources */,
 				2EFA70B81B5994BA00C91615 /* AppDelegate.m in Sources */,
 				2EFA70E01B59976D00C91615 /* BaseViewController.m in Sources */,
 				2EFA70BB1B5994BA00C91615 /* MadStreetDen.xcdatamodeld in Sources */,
+				3F906EAC1B79FD6500C0DE6A /* TOCropViewController.m in Sources */,
+				3F906EC61B79FE5100C0DE6A /* TOCropView.m in Sources */,
 				3F2CFCBC1B5E398D0045B9A7 /* ProductDetailViewController.m in Sources */,
 				3F283A391B61371600282684 /* TypeFilterViewController.m in Sources */,
 				3F2CFCB81B5E1F6C0045B9A7 /* ProductGridCollectionViewCell.m in Sources */,
+				3F906EB71B79FE0100C0DE6A /* TOCroppedImageAttributes.m in Sources */,
+				3F906EB81B79FE0100C0DE6A /* TOCropViewControllerTransitioning.m in Sources */,
 				2EFA70DD1B5995BF00C91615 /* ProductListGridViewController.m in Sources */,
 				2EFA70BE1B5994BA00C91615 /* ViewController.m in Sources */,
 				2EFA70B51B5994BA00C91615 /* main.m in Sources */,
@@ -522,11 +616,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SDWebImage-agdfkiolxkaktxggfgijdimqjotb/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/MadStreetDen",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MadStreetDen.pch";
 				INFOPLIST_FILE = MadStreetDen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -536,11 +636,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SDWebImage-agdfkiolxkaktxggfgijdimqjotb/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/MadStreetDen",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MadStreetDen.pch";
 				INFOPLIST_FILE = MadStreetDen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

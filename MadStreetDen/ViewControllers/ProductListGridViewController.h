@@ -11,13 +11,15 @@
 #import "BaseViewController.h"
 #import "ProductDetailViewController.h"
 #import "Request.h"
+#import "TOCropViewController.h"
 
-
-@interface ProductListGridViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,RequestDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+@interface ProductListGridViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,RequestDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,TOCropViewControllerDelegate>{
     IBOutlet UICollectionView *productCollection;
     UIImagePickerController *picker;
-    UIImage *originalImage;
 }
 @property (nonatomic, retain)    NSArray *dataArray;
+@property (nonatomic, retain) UIImage *originalImage;
+@property (nonatomic, retain) __block UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) UIImage *cropImage;
 
 @end
